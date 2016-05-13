@@ -1,5 +1,6 @@
 # 3. Design
 
+In diesem Abschnitt werden grundlegende Architekturentscheidungen dargestellt und begründet. 
 Das Projekt ist in 3 Pakete aufgeteilt. Jedes Paket wird über NPM einzeln zur Verfügung gestellt und in einem getrennten Repository verwaltet. Die Pakete hängen teilweise von einander ab. Im Folgenden sind die Aufgaben und Funktionen der Bestandteile näher erläutert.
 
 ## 3.1 Setlx Transpiler
@@ -18,15 +19,15 @@ __Antlr 4 mit JavaScript Target__
 
 SetlX wird von einem Javaprogramm interpretiert. Der dazugehörige Parser wird mit Hilfe einer [Antlr 3 Grammatik](https://github.com/herrmanntom/setlX/blob/master/interpreter/core/src/main/antlr/SetlXgrammar.g) erzeugt. [Antlr 4](www.antlr.org) zusammen mit dem [Javascript Target]() zu verwenden ist also naheliegend, da so die SetlX Grammatik für den Java Interpreter vermeindlich übernommen werden kann.
 
-In einem Versuch die Antlr 3 Grammatik in eine Antlr 4 Grammatik umzuwandeln stellte sich schnell auf Grund der Unterschiede als schwierig heraus. Desweiteren
+In einem Versuch die Antlr 3 Grammatik in eine Antlr 4 Grammatik umzuwandeln stellte sich schnell auf Grund der Unterschiede zwischen den Versionen als aufwändig heraus. Desweiteren erreichte der generierte Parser sehr schnell das Speicherlimit der Node.js Virtual Machine.
 
 __JISON__
 
-JISON ist einer der bekanntesten Parsergeneratoren. JISON unterstützt im Gegensatz zu Antlr und PEG.js nur kontextfreie Grammatiken. Da die SetlX Grammatik jedoch als kontextsensitive Grammatik formuliert ist, müsste die Grammatik mit großem Aufwand umformuliert werden.
+JISON ist einer der bekanntesten Parsergeneratoren. JISON unterstützt im Gegensatz zu Antlr und PEG.js nur kontextfreie Grammatiken. Da die SetlX Grammatik jedoch als kontextsensitive Grammatik formuliert ist, müsste die Grammatik mit großem Aufwand umformuliert werden. 
 
 __PEG.js__
 
-PEG.js ist ein Parsergenerator für kontextsensitive 
+PEG.js ist ein Parsergenerator für kontextsensitive Grammatiken in JavaScript. Der Name impliziert bereits, dass PEG ähnlich wie Antlr für _Parsing Expression Grammar_ entwickelt wurde. Das hat den Vorteil, dass auch hier die SetlX Grammatik bis auf einige Syntaxänderungen in ihrer Struktur erhalten bleiben kann. Lediglich die 
 
 ## 3.2. SetlX CLI
 
