@@ -1,9 +1,14 @@
 # Introduction
 
+## Einführung
+
+Das SetlX.js Projekt entwickelt einen Transpiler für die Sprache SeltX. Die Zielsprache des Transpilers ist JavaScript.
+
+SetlX ist eine höhere Programmiersprache und wird hauptsächlich für Bildungszwecke verwendet. SetlX implemetiert Mengen als First-Class-Objekte. Dadurch können viele Konzepte aus der Mengenlehre direkt angewandt werden. SetlX Code wird standardmäßig von einem Interpreter auf der Java Virtual Machine ausgeführt.
+
 ## Motivation
 
-SetlX is a high level programming language, which is mostly used for educational purposes. SetlX implements sets as first class objects and therefore many concepts from set theory can be applied directly. SetlX code is executed by an Interpreter written for the Java Virtual Machine.
-
+Für die Verwendung von SetlX ist eine Installation auf einem System mit installierter Java Virtual Machine notwendig. Dieser Schritt stellt eine Einstiegshürde da, die durch eine Umwandlung in JavaScript wegfallen kann. JavaScript kann von einem Browser innerhalb einer Webseite ausgeführt werden. Neben Browsern
 One of SetlX problems is the high hurdle and the required setup. By transpiling SetlX to Javascript it can run inside the Browser and across devices since Javascript nowdays runs on the web, on servers, PCs, mobile devices and even televisions. As Javascript compiled SetlX could also access the Javascript eco system.
 
 ## Background
