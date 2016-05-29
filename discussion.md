@@ -4,6 +4,8 @@
 
 Mit dieser Arbeit ist ein solider Transpiler für SetlX entstanden. SetlX Programme lassen sich nun auf Node.js ausführen. Mit den zur Verfügung gestellten Paketen ist die Installation von SetlX.js besonders einfach, wenn Node.js bereits auf der Maschiene vorhanden ist. Mit NPM lassen sich die Pakete mit nur wenigen Zeilen in der Konsole einrichten.
 
+Durch die Strukturierung der Tests und eine Architektur, die speziell für Testbarkeit entworfen wurde, können die Pakete nicht nur einfach modular erweitert werden, sondern auch gleich getestet werden.
+
 In der ersten Version kommt jedoch die definierte Untermenge von SetlX schnell an seine Grenzen. Nur wenige Scripte aus Professor Stroetmanns Logikvorlesung können direkt ausgeführt werden. Viele Programme müssten umformuliert werden, damit sie mit der geringen SetlX Version auskommen. Dadurch wird SetlX.js als Konsolenanwendung wenig attraktiv.
 
 ## 5.2 Ausblick
