@@ -8,7 +8,7 @@ SetlX ist eine höhere Programmiersprache und wird hauptsächlich für Bildungsz
 
 ## Motivation
 
-Für die Verwendung von SetlX ist eine Installation auf einem System mit installierter Java Virtual Machine notwendig. Dieser Schritt stellt eine Einstiegshürde da, die durch eine Umwandlung in JavaScript wegfallen kann. JavaScript kann von einem Browser innerhalb einer Webseite ausgeführt werden. Aber nicht nur im Browser ist JavaScript anzutreffen, sondern auch auf Servern, PCs, mobilen Engeräten und sogar Fernsehern. Mit dem größten Anzahl an Paketen unter den Paketmanagern der populären Sprachen bietet JavaScript ein riesiges Ökosystem und eine starke Community.
+Für die Verwendung von SetlX ist eine Installation auf einem System mit installierter Java Virtual Machine notwendig. Dieser Schritt stellt eine Einstiegshürde da, die durch eine Umwandlung in JavaScript wegfallen kann. JavaScript kann von einem Browser innerhalb einer Webseite ausgeführt werden. Aber nicht nur im Browser ist JavaScript anzutreffen, sondern auch auf Servern, PCs, mobilen Engeräten und sogar Fernsehern. Mit dem größten Anzahl an Paketen unter den Paketmanagern der populären Sprachen bietet JavaScript außerdem ein riesiges Ökosystem und eine starke Community.
 
 ## Hintergrund
 

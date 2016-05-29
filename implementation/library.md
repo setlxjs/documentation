@@ -1,8 +1,8 @@
-## 4.2 SetlX.js Library
+# 4.2 SetlX.js Library
 
 Die SetlX.js Library ist in ES2015 geschrieben und wird, wie der Transpiler für die Verwendung im Browser und Node.js zuerst von Babel transpiliert. Von der Bibliothek werden Funktionen bereitgestellt, die ein in JavaScript übersetztes SetlX Programm brauchen könnte.
 
-### Struktur
+## 4.2.1 Struktur
 
 Toplevel Ordnerstruktur:
 ```
@@ -21,8 +21,3 @@ util/
 `class` enthält Klassendefinitionen. `hlp` enthält alle Helperfunktionen. `std` enthält Funktionen der SetlX Standard Library. `util` enthält Funktionalitäten, die von den anderen Funktionen häufig verwendet werden.
 
 Von der Library werden zwei unterschiedliche Arten von Funktionen exportiert. Zum einen werden die sogenannten Helperfunktionen angeboten. Helperfunktionen unterstützen das Programm mit Funktionalitäten, die nur schwer durch den Transpiler alleine abgebildet werden können. Eine genauere Betrachtung dieses Themas findet sich in Kapitel 3.3.1.
-
-
-##  SetlX.js CLI
-
-Das SetlX.js Command Line Interface wurde speziell für Node.js entwickelt und ist in ES5 geschrieben. Es läuft so nativ auf V8, der Virtuellen Maschiene in Node.js. SetlX.js bildet einen schmalen Wrapper um den Transpiler und stellt Funktionen und Optionen über Flags bereit.

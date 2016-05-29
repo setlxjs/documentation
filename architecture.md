@@ -1,4 +1,4 @@
-# 3. Design
+# 3 Design
 
 In diesem Abschnitt werden grundlegende Architekturentscheidungen dargestellt und begründet.
 Das Projekt ist in 3 Pakete aufgeteilt. Jedes Paket wird über NPM einzeln zur Verfügung gestellt und in einem getrennten Repository verwaltet. Die Pakete hängen teilweise von einander ab. Im Folgenden sind die Aufgaben und Funktionen der Bestandteile näher erläutert.
@@ -33,11 +33,19 @@ PEG.js ist in JavaScript geschrieben und integriert sich im Gegensatz zu Antlr p
 
 PEG.js stellt sich als mächtige Lösung heraus, die sich in die verwendete Technologien ohne Probleme einfügen lässt. SetlX.js setzt deshalb auf PEG.js als Parsergenerator.
 
-## 3.2. SetlX CLI
+#### 3.1.1.2 Syntaxbaumklassen
+
+Das Ergebnis des Parsers muss für die nächsten Schritte in einer Datenstruktur festgehalten werden. Dafür werden in der Regel Syntaxbäume verwendet. Um die Erstellung des Syntaxbaums einfacher zu gestalten werden Klassen angelegt, mit denen die Knoten im Baum einfach generiert werden können. Für fast jeder Regel wird dafür eine Klasse erstellt. Eine Außnahme bilden die Listenregeln, etwa _ExpressionList_. Sie geben statt einer eigenen _ExpressionList_-Klasse einfach eine Liste bzw. einen JavaScript Array von _Expressions_ zurück. So können neue Features durch die Erstellung von Parseregeln in der Grammatik und entsprechenden Klassen hinzugefügt werden, ohne mit
+
+### 3.1.2 Der Transpiler
+
+Für den Transpiler wird ebenso ein modularer Aufbau verwendet. Für jeden Knotentyp im AST wird eine Transpilerfunktion erstellt. Eine solche Funktion kümmert sich im Idealfall auch nur um den Knoten selbst, nicht um darunter oder darüber liegende Knoten.
+
+## 3.2 SetlX CLI
 
 Das SetlX Command Line Interface ist eine Benutzerschnittstelle für das umwandeln von SetlX Code in JavaScript mit Hilfe der Console. Das Paket ist speziell für Node.js entwickelt und benötigt im Gegensatz zu den anderen Paketen auch Node.js zur Ausführung. Es verwendet den SetlX Transpiler und stellt die Funktionen und Optionen als Befehle zur Verfügung. Hauptsächlich werden damit ganze SetlX Dateien oder Ordner zu JavaScript umgewandelt.
 
-## 3.3. SetlX Runtime Library
+## 3.3 SetlX Runtime Library
 
 Die SetlX Runtime Library wird von Programmen benötigt, die von SetlX zu JavaScript umgewandelt wurden. Die Runtime Library implementiert zum einen Funktionen aus der SetlX Standard Library und zum anderen auch Helperfunktionen, die für die effektive Kompilierung von SetlX Sourcecode benötigt werden. Über die Herausforderungen und Designentscheidungen der wird in den nächsten Kapiteln näher eingegangen.
 
