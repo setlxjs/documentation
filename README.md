@@ -1,4 +1,7 @@
-# SetlX.js
+# SetlX.js - Ein SetlX-JavaScript Transpiler
+Eine Studienarbeit von Hendrik Niemann
+
+Betreuung durch Prof. Dr. Karl Stroetmann
 
 # Abstrakt
 

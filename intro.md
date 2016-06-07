@@ -1,21 +1,17 @@
-# Introduction
+# Einleitung
 
-## Einführung
+## Über das Thema der Arbeit
 
-Das SetlX.js Projekt entwickelt einen Transpiler für die Sprache SeltX. Die Zielsprache des Transpilers ist JavaScript.
-
-SetlX ist eine höhere Programmiersprache und wird hauptsächlich für Bildungszwecke verwendet. SetlX implemetiert Mengen als First-Class-Objekte. Dadurch können viele Konzepte aus der Mengenlehre direkt angewandt werden. SetlX Code wird standardmäßig von einem Interpreter auf der Java Virtual Machine ausgeführt.
+SetlX ist eine höhere Programmiersprache und wird hauptsächlich für Bildungszwecke verwendet. SetlX implemetiert Mengen als First-Class-Objekte. Dadurch können viele Konzepte aus der Mengenlehre direkt angewandt werden. SetlX Code wird standardmäßig von einem Interpreter auf der Java Virtual Machine ausgeführt. Das SetlX.js Projekt entwickelt einen Transpiler für die Sprache SeltX. Die Zielsprache des Transpilers ist JavaScript. Dadurch kann SetlX erstmals auf virtuellen Maschienen für JavaScript ausgeführt werden.
 
 ## Motivation
 
 Für die Verwendung von SetlX ist eine Installation auf einem System mit installierter Java Virtual Machine notwendig. Dieser Schritt stellt eine Einstiegshürde da, die durch eine Umwandlung in JavaScript wegfallen kann. JavaScript kann von einem Browser innerhalb einer Webseite ausgeführt werden. Aber nicht nur im Browser ist JavaScript anzutreffen, sondern auch auf Servern, PCs, mobilen Engeräten und sogar Fernsehern. Mit dem größten Anzahl an Paketen unter den Paketmanagern der populären Sprachen bietet JavaScript außerdem ein riesiges Ökosystem und eine starke Community.
 
+Teile dieses Umfeldes könnten durch SetlX genutzt werden, wenn SetlX Code in JavaScript umgewandelt wird.
+
 ## Hintergrund
 
-In den letzten Jahren ist JavaScript von einer Scriptsprache, die nur Anwendung im Browser fand, zu einer der beliebtesten Programmiersprachen aufgestiegen. Gleichzeitig ist JavaScript die Sprache mit den meisten Transpilern. Ein Grund dafür ist die
-Programmiersprachen, die auf ihrer eigenen virtuellen Maschiene laufen oder . Other than languages that run on their own virtual machine or to machine code compiled languages, which depend on the implementation of one compiler, javascript needs to run in different browsers and engines. By the time of this writing five browser make up nearly all of the web traffic: Google Chrome, Firefox, Internet Explorer/MS Edge, Safari and Opera. Only Opera and Chrome share their Javascript implementation. Also many old browsers are still in use. Introducing and using new language features for JavaScript can take up to many years.
+In den letzten Jahren ist JavaScript von einer Scriptsprache, die nur Anwendung im Browser fand, zu einer der beliebtesten Programmiersprachen aufgestiegen. Gleichzeitig ist JavaScript die Sprache mit den meisten Transpilern. Ein Grund dafür ist die die Tatsache, dass JavaScript auf [vielen verschiedenen virtuellen Maschienen](https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript#What_JavaScript_implementations_are_available) läuft. Für viele Jahre wurde die Entwicklung der EcmaScript Definition nur langsam vorrangetrieben. Hinzu kam die Tatsache, dass die Umsetzung der neuen Definitionen nur in den neusten Browserversionen gemacht werden konnte. Dieser Zustand führte so zu einem Anstieg an Transpilern, die Code unterschiedlichster Sprachen in JavaScript verwandeln.
 
-This state lead to many transpilers written for custom languages or existing languages.
-
-[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript#What_JavaScript_implementations_are_available
-[2]: https://github.com/jashkenas/coffeescript/wiki/list-of-languages-that-compile-to-js
+Kaum eine der bekanntesten Programmiersprachen kann heute nicht durch einen Transpilierungsvorgang im Browser ausgeführt werden. Mit dieser Arbeit kann auch SetlX auf der Liste dieser Sprachen erscheinen.
