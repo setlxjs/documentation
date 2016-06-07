@@ -18,4 +18,4 @@ Ein Parser Generator ist ein Programm, das aus Programmdefinitionen, in der Rege
 
 ### 2.4.1 Type System
 
-Das SetlX Type System kennt verschiedene Primitive Typen: Booleans sind klassische Boolsche Wahrheitswerte ausgedrückt durch die Literale `true` und `false`. Strings sind Zeichenketten. Neben Integers und Fließkommazahlen stehen in SetlX auch rationale Zahlen zur Verfügung. Weiterhin kennt SetlX Listen, Mengen, Funktionen, reguläre Ausdrücke und Objekte. SetlX.js implementiert allerdings nur Booleans, Integers, Floats, Strings, Funktionen, Listen und Mengen.
+Das SetlX Type System kennt verschiedene Primitive Typen: Booleans sind klassische Boolsche Wahrheitswerte ausgedrückt durch die Literale `true` und `false`. Strings sind Zeichenketten. Neben Integers und Fließkommazahlen stehen in SetlX auch rationale Zahlen zur Verfügung. Weiterhin kennt SetlX Listen, Mengen, Funktionen, reguläre Ausdrücke und Objekte. SetlX.js implementiert allerdings nur Booleans, Integers, Doubles, Strings, Funktionen, Listen und Mengen.

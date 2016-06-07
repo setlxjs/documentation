@@ -3,7 +3,7 @@
 In diesem Abschnitt werden grundlegende Architekturentscheidungen dargestellt und begründet.
 Das Projekt ist in 3 Pakete aufgeteilt. Jedes Paket wird über NPM einzeln zur Verfügung gestellt und in einem getrennten Repository verwaltet. Die Pakete hängen teilweise von einander ab. Im Folgenden sind die Aufgaben und Funktionen der Bestandteile näher erläutert.
 
-## 4.1 Setlx Transpiler
+## 4.1 SetlX.js Transpiler
 
 Der Transpiler bildet das Kernstück des Projekts. Er enthält einen Parser für SetlX und alle Funktionen, die benötigt werden um SetlX in JavaScript zu übersetzen. Allerdings bietet dieses Paket nach außen hin nur Programmierschnittstellen an, die von anderen Programmen verwendet werden können. Diese Schnittstelle ist im Kapitel Design näher dokumentiert. Als Benutzerschnittstellen sind viele unterschiedliche Möglichkeiten denkbar. Zum Beispiel kann der Transpiler von einem Command Line Interface verwendet werden, in einem Browser on-the-fly aufgerufen werden oder von einem Gulp- oder Webpack-Plugin verwendet werden.
 
@@ -43,11 +43,11 @@ Für den Transpiler wird ebenso ein modularer Aufbau verwendet. Für jeden Knote
 
 Eine Transpilerfunktion erhält also einen Teilbaum des AST als Übergabeparameter und gibt einen String zurück. Dieser String enthält den übersetzten JavaScript Code. Statt direkt das Ergebnis zurückzuliefern hätte auch ein JavaScript Syntaxbaum generiert werden können, der dann in einem weiterem Schritt aus diesem JavaScript generiert. Eine solche Architektur wird zum Beispiel von Babel verwendet und ist besonders dann vorteilhaft, wenn nur Teile des Baums modifieziert werden müssen, aber der größere Teil wiederverwendet werden kann. Dadurch können auch mehrere Transpiler einfach hintereinander geschaltet werden. Für SetlX.js ist es jedoch völlig ausreichend gleich das Ergebnis zu erstellen.
 
-## 4.2 SetlX CLI
+## 4.2 SetlX.js CLI
 
 Das SetlX Command Line Interface ist eine Benutzerschnittstelle für das umwandeln von SetlX Code in JavaScript mit Hilfe der Console. Das Paket ist speziell für Node.js entwickelt und benötigt im Gegensatz zu den anderen Paketen auch Node.js zur Ausführung. Es verwendet den SetlX Transpiler und stellt die Funktionen und Optionen als Befehle zur Verfügung. Hauptsächlich werden damit ganze SetlX Dateien oder Ordner zu JavaScript umgewandelt. Zu Beginn werden drei Kommandos zur Verfügung gestellt: Ein Kommando zur Ansicht des AST, hauptsächlich für Debug- und Präsentationszwecken. Ein Befehl zum transpilen von SetlX Sourcecode. Die daduch entstandenen JavaScriptdateien können dann von Node.js ausgefürt werden. Außerdem kann mit einem weiterem Befehl auch das Programm direkt ausgeführt werden.
 
-## 4.3 SetlX Runtime Library
+## 4.3 SetlX.js Runtime Library
 
 Die SetlX Runtime Library wird von Programmen benötigt, die von SetlX zu JavaScript umgewandelt wurden. Die Runtime Library implementiert zum einen Funktionen aus der SetlX Standard Library und zum anderen auch Helperfunktionen, die für die effektive Kompilierung von SetlX Sourcecode benötigt werden. Über die Herausforderungen und Designentscheidungen der wird in den nächsten Kapiteln näher eingegangen.
 
