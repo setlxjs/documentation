@@ -8,7 +8,7 @@ Ein Transpiler (auch Transcompiler oder Source-to-Source Compiler) ist ein Compu
 
 ## 2.2 Parser
 
-Ein Parser ist ein Programm, das Programmcode in semantische Bestandteile aufteilt. In der Regel wird das Ergebnis eines Parsers. Je nach Art des Parsers ist dem Parser noch ein sogenannter Lexer vorangestellt, der das Programm zuerst in Tokens aufteilt. Dann verarbeitet der Parser nicht direkt den Programmcode sondern den erzeugten Tokenstream.
+Ein Parser ist ein Programm, das Programmcode in semantische Bestandteile aufteilt. In der Regel wird das Ergebnis eines Parsers in einem Parsebaum dargestellt (vgl. [[2, 184]](bibliography.md)). Je nach Art des Parsers ist dem Parser noch ein sogenannter Lexer vorangestellt, der das Programm zuerst in Tokens aufteilt. Dann verarbeitet der Parser nicht direkt den Programmcode sondern den erzeugten Tokenstream.
 
 ## 2.3 Parser Generator
 
