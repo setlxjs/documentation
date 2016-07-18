@@ -232,6 +232,6 @@ export default function typify(value) {
 
 ## 5.3 SetlX.js CLI
 
-Das SetlX.js Command Line Interface wurde speziell für Node.js entwickelt und ist in ES5 geschrieben. Es läuft so nativ auf V8, der Virtuellen Maschiene in Node.js. SetlX.js bildet einen schmalen Wrapper um den Transpiler und stellt Funktionen und Optionen über Flags bereit. SetlX.js CLI verwendet die JavaScript Library [Commander.js](https://github.com/tj/commander.js) um die Übergabeparameter zu parsen.
+Das SetlX.js Command Line Interface wurde speziell für Node.js entwickelt und ist in ES5 geschrieben. Es läuft so nativ auf V8, der Virtuellen Maschine in Node.js. SetlX.js bildet einen schmalen Wrapper um den Transpiler und stellt Funktionen und Optionen über Flags bereit. SetlX.js CLI verwendet die JavaScript Library [Commander.js](https://github.com/tj/commander.js) um die Übergabeparameter zu parsen.
 
 Zum Transpilieren wird der SetlX.js Transpiler aufgerufen. Dateisystemoperationen werden mit den standardmäßigen Node.js Paketen `path` und `fs` umgesetzt. Für das Ausführen des Ergebniscodes wird ein einfacher `eval` Aufruf verwendet.
