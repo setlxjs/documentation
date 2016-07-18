@@ -16,7 +16,7 @@ Für die Erstellung des Transpilers kommen unterschiedliche Tools aus dem Node.j
 
 ### 5.1.2 Grammatik
 
-Die SetlX.js Grammatik bedient sich der Struktur der originalen SetlX Grammatik. Jede Regel, die zu einem unterstütztem Bestandteil von SetlX.js gehört, wurde von Antlr zu PEG.js übersetzt. In der sogenannten _Action_ der wird der abstrakte Syntaxbaum erstellt.
+Die SetlX.js Grammatik bedient sich der Struktur der originalen SetlX Grammatik. Jede Regel, die zu einem unterstütztem Bestandteil von SetlX.js gehört, wurde von Antlr zu PEG.js übersetzt. In der sogenannten _Action_ der Regel wird der abstrakte Syntaxbaum erstellt.
 
 ```js
 // Beispiel einer Regel
@@ -27,7 +27,7 @@ Iterator
 
 ### 5.1.3 Syntaxbaum
 
-Für die Erstellung von Knoten im AST werden für jede Art von Token eine eigene Klasse angelegt. Die Klasse verfügt über einen Konstruktor, der die Attribute festlegt. Als Attribut erhält jeder Knoten das Feld `token`. Es enthält einen konstanten String, der verwendet wird um zu entscheiden, welche Transpilerfunktion auf den Knoten angewandt werden muss.
+Für die Erstellung von Knoten im AST wird für jede Art von Token eine eigene Klasse angelegt. Die Klasse verfügt über einen Konstruktor, der die Attribute festlegt. Als Attribut erhält jeder Knoten das Feld `token`. Es enthält einen konstanten String, der verwendet wird um zu entscheiden, welche Transpilerfunktion auf den Knoten angewandt werden muss.
 
 Die Übergabeparameter unterscheiden sich je nach Art der Operation. Im unteren Beispiel
 
@@ -105,7 +105,7 @@ export default function disjunction(tree, transpile) {
 }
 ```
 
-Andere Transpilerfunktionen verwenden Plugins im den globalen Zustand des Programms zu beeinflussen. Die `identifier` Funktion überprüft zuerst, ob es sich beim Namen des Identifiers um einen reservierten Namen aus der Standardbibliothek handelt. Ist das der Fall wird die Funktion automatisch vom Plugin importiert. In der Regel ist dies aber nicht der Fall und der Name wird im `ScopePlugin` registriert. Zum Schluss kann der Identifiername als String zurückgegeben werden.
+Andere Transpilerfunktionen verwenden Plugins um den globalen Zustand des Programms zu beeinflussen. Die `identifier` Funktion überprüft zuerst, ob es sich beim Namen des Identifiers um einen reservierten Namen aus der Standardbibliothek handelt. Ist das der Fall wird die Funktion automatisch vom Plugin importiert. In der Regel ist dies aber nicht der Fall und der Name wird im `ScopePlugin` registriert. Zum Schluss kann der Identifiername als String zurückgegeben werden.
 
 ```js
 // Global state manipulation with plugins
@@ -117,7 +117,7 @@ export default function identifier({ name }, transpile, { scopePlugin, stdLibPlu
 }
 ```
 
-Andere Transpiler erstellen Ausgaben mit Hilfe der Plugins. Jede Funktion erhält ihren eigenen Scope. Damit die Variablen deklariert werden muss die Deklaration als erstes im Funktionsbody ausgegeben werden. Der Transpiler für Prozeduren erstellt deshalb einen neuen Scope im `ScopePlugin`. Nachdem der Funktionsblock übersetzt wurde kann der Scope wieder geschlossen werden. Alle registrierten Variablen können dann an den Anfang des Funktionsblocks gesetzt werden.
+Andere Transpiler erstellen Ausgaben mit Hilfe der Plugins. Jede Funktion erhält ihren eigenen Scope. Damit die Variablen deklariert werden, muss die Deklaration als erstes im Funktionsbody ausgegeben werden. Der Transpiler für Prozeduren erstellt deshalb einen neuen Scope im `ScopePlugin`. Nachdem der Funktionsblock übersetzt wurde, kann der Scope wieder geschlossen werden. Alle registrierten Variablen können dann an den Anfang des Funktionsblocks gesetzt werden.
 
 ```js
 import indent from '../util/indent';
@@ -232,6 +232,6 @@ export default function typify(value) {
 
 ## 5.3 SetlX.js CLI
 
-Das SetlX.js Command Line Interface wurde speziell für Node.js entwickelt und ist in ES5 geschrieben. Es läuft so nativ auf V8, der Virtuellen Maschiene in Node.js. SetlX.js bildet einen schmalen Wrapper um den Transpiler und stellt Funktionen und Optionen über Flags bereit. SetlX.js CLI verwendet die JavaScript Library [Commander.js](https://github.com/tj/commander.js) um die Übergabeparameter zu parsen.
+Das SetlX.js Command Line Interface wurde speziell für Node.js entwickelt und ist in ES5 geschrieben. Es läuft so nativ auf V8, der Virtuellen Maschine in Node.js. SetlX.js bildet einen schmalen Wrapper um den Transpiler und stellt Funktionen und Optionen über Flags bereit. SetlX.js CLI verwendet die JavaScript Library [Commander.js](https://github.com/tj/commander.js) um die Übergabeparameter zu parsen.
 
 Zum Transpilieren wird der SetlX.js Transpiler aufgerufen. Dateisystemoperationen werden mit den standardmäßigen Node.js Paketen `path` und `fs` umgesetzt. Für das Ausführen des Ergebniscodes wird ein einfacher `eval` Aufruf verwendet.
